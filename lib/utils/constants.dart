@@ -52,7 +52,7 @@ class Constants {
   static String vipCoinsDateKey = "vip_coins_date";
 
   // api keys
-  static String moviesApiKey = "API_KEY"; // e.g. "bff708fnwFwef9832ed927da1d"; or Env.moviesApiKey;
+  static String moviesApiKey = "d61431a2fb64b6e56c6f086952e63ab6"; // e.g. "bff708fnwFwef9832ed927da1d"; or Env.moviesApiKey;
 
   /// api routes
   static String apiBaseUrl = "http://api.themoviedb.org/3/";
