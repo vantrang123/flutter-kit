@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:starterkit/local/LocalStorage.dart';
 import 'package:starterkit/localization/app_localizations.dart';
 import 'package:starterkit/localization/language_constants.dart';
 import 'package:starterkit/utils/constants.dart';
@@ -147,6 +147,7 @@ class LogoutItem extends StatelessWidget {
 
 /// change language
 class ChangeLanguage extends StatelessWidget {
+  LocalStorage localStorageEx = LocalStorage();
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -155,8 +156,7 @@ class ChangeLanguage extends StatelessWidget {
       ),
       leading: Icon(Icons.language, color: Styles.appDrawerIconColor),
       onTap: () async {
-        SharedPreferences prefs = await SharedPreferences.getInstance();
-        String _languageCode = (prefs.getString(LAGUAGE_CODE) ?? "en");
+        String _languageCode = localStorageEx.getLanguage();
         if (_languageCode == "en") _changeLanguage(VIETNAMESE, context);
         else _changeLanguage(ENGLISH, context);
         // Navigator.pop(context);
@@ -165,8 +165,7 @@ class ChangeLanguage extends StatelessWidget {
   }
 
   void _changeLanguage(String languageCode, BuildContext context) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString(LAGUAGE_CODE, languageCode);
+    localStorageEx.setLanguage(languageCode);
     Locale locale;
     switch (languageCode) {
       case ENGLISH:

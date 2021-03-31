@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:starterkit/local/LocalStorage.dart';
 import 'package:starterkit/utils/constants.dart';
 import 'package:starterkit/utils/styles.dart';
 
@@ -14,10 +15,10 @@ class SplashScreenPage extends StatefulWidget {
 }
 
 class _SplashScreenPageState extends State<SplashScreenPage> {
+  LocalStorage localStorageEx = LocalStorage();
 
   Future checkFirstSeen() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool _seen = (prefs.getBool(Constants.appPreviouslyRunKey) ?? false);
+    bool _seen = localStorageEx.getRunKey() ?? false;
 
     if (_seen) {
       Navigator.of(context).pushReplacement(
@@ -26,7 +27,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
         )
       );
     } else {
-      await prefs.setBool(Constants.appPreviouslyRunKey, true);
+      localStorageEx.setRunKey(true);
       Navigator.of(context).pushReplacement(
         new MaterialPageRoute(
           builder: (context) => new IntroScreenPage()
