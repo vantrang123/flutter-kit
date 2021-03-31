@@ -51,11 +51,24 @@ class Constants {
   static String vipCoinsKey = "vip_coins";
   static String vipCoinsDateKey = "vip_coins_date";
 
-  // api keys
+  /// api keys
   static String moviesApiKey = "d61431a2fb64b6e56c6f086952e63ab6"; // e.g. "bff708fnwFwef9832ed927da1d"; or Env.moviesApiKey;
 
   /// api routes
-  static String apiBaseUrl = "http://api.themoviedb.org/3/";
+  static const String apiBaseUrlDev = "http://api.themoviedb.org/3/";
+  static const String apiBaseUrlStaging = "http://api.themoviedb.org/3/";
+  static const String apiBaseUrlPro = "http://api.themoviedb.org/3/";
+  static String apiBaseUrl = "";
   static String moviesUrl = apiBaseUrl + "movie/popular?api_key=" + moviesApiKey;
 
+  /// route name
+  static const String splash = 'SplashScreenPage';
+  static const String home = "HomePage";
+  static const String referAFriendPage = "ReferAFriendPage";
+  static const String aboutPage = "AboutPage";
+  static const String rateApp = "RateApp";
+  static const String flutterTipsPage = "FlutterTipsPage";
+  static const String loginPage = "FlutterTipsPage";
+  static const String dashboardPage = "DashboardPage";
+  static const String moviesIndexPage = "MoviesIndexPage";
 }

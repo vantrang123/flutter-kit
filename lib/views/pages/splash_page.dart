@@ -92,7 +92,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
               Container(
                 padding: EdgeInsets.all(20),
                 height: 250,
-                child: Image.asset('assets/images/acelords_brand.png'),
+                child: Image.asset('assets/images/rikai_brand.png'),
               ),
               SizedBox(height: 10.0,),
             ],

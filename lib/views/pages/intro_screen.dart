@@ -14,7 +14,7 @@ class IntroScreenPage extends StatefulWidget {
 
 class _IntroScreenPageState extends State<IntroScreenPage> {
   static final List<String> images = [
-    'assets/images/acelords_brand.png',
+    'assets/images/rikai_brand.png',
     'assets/images/undraw_happy_music_g6wc.png',
     'assets/images/undraw_the_world_is_mine_nb0e.png',
   ];
@@ -101,12 +101,7 @@ class _IntroScreenPageState extends State<IntroScreenPage> {
             showNextButton: true,
             showBackButton: true,
             onTapDoneButton: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HomePage(),
-                ),
-              );
+              Navigator.pushNamed(context, Constants.home);
             },
             pageButtonTextStyles: TextStyle(
               color: Colors.white,

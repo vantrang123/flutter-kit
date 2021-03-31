@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 // primaryColor = #9b51e0 rgb(155,81,224)
 
 class Styles {
-
-  static Color appPrimaryColor = Color.fromRGBO(155, 81, 224, 1);
+  // Color.fromRGBO(155, 81, 224, 1);
+  static Color appPrimaryColor = Color(0xff08BAF0);
   static Color appAccentColor = Colors.cyan[600];
   static Color appCanvasColor = Colors.white;
   static Color appBackground = Colors.blue;

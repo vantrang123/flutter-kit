@@ -98,7 +98,7 @@ class FlutterTipsItem extends StatelessWidget {
       onTap: () {
         Navigator.pop(context);
 
-        Navigator.pushNamed(context, '/flutter-tips');
+        Navigator.pushNamed(context, Constants.flutterTipsPage);
       },
     );
   }
@@ -115,7 +115,7 @@ class ReferAFriendItem extends StatelessWidget {
       onTap: () {
         Navigator.pop(context);
 
-        Navigator.pushNamed(context, '/refer-a-friend');
+        Navigator.pushNamed(context, Constants.referAFriendPage);
       },
     );
   }
@@ -172,7 +172,7 @@ class _LoginItemState extends State<LoginItem> {
           onTap: () {
             Navigator.pop(context);
 
-            Navigator.pushNamed(context, '/dashboard');
+            Navigator.pushNamed(context, Constants.dashboardPage);
           },
         )
       : ListTile(
@@ -181,7 +181,7 @@ class _LoginItemState extends State<LoginItem> {
           onTap: () {
             Navigator.pop(context);
 
-            Navigator.pushNamed(context, '/login');
+            Navigator.pushNamed(context, Constants.loginPage);
           },
         );
   }
@@ -197,7 +197,7 @@ class AboutItem extends StatelessWidget {
       onTap: () {
         Navigator.pop(context);
 
-        Navigator.pushNamed(context, '/about');
+        Navigator.pushNamed(context, Constants.aboutPage);
       },
     );
   }
@@ -214,7 +214,7 @@ class RateAppItem extends StatelessWidget {
       onTap: () {
         Navigator.pop(context);
 
-        Navigator.pushNamed(context, '/rate-app');
+        Navigator.pushNamed(context, Constants.rateApp);
       },
     );
   }

@@ -1,13 +1,32 @@
+import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import 'utils/router.dart';
+import 'utils/constants.dart';
+import 'utils/flavor.dart';
+import 'utils/router.dart' as router;
 import 'utils/styles.dart';
 import 'views/pages/unknown_page.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  final flavor = EnumToString.fromString(
+    Flavor.values,
+    const String.fromEnvironment('FLAVOR'),
+  );
+  if (flavor.index == 0)
+    Constants.apiBaseUrl = Constants.apiBaseUrlDev;
+  else if (flavor.index == 1)
+    Constants.apiBaseUrl = Constants.apiBaseUrlStaging;
+  else
+    Constants.apiBaseUrl = Constants.apiBaseUrlPro;
+  print('FLAVOR $flavor ${Constants.apiBaseUrl}');
+  runApp(MultiProvider(
+    providers: [Provider.value(value: flavor)],
+    child: App(),
+  ));
+}
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,8 +49,8 @@ class MyApp extends StatelessWidget {
         // text styling for headlines, titles, bodies of text, and more.
         textTheme: Styles.appTextTheme,
       ),
-      initialRoute: '/splash',
-      routes: appRoutes,
+      initialRoute: Constants.splash,
+      onGenerateRoute: router.Router.generateRoute,
       onUnknownRoute: (RouteSettings settings) {
         return MaterialPageRoute(
           builder: (BuildContext context) => UnknownPage(),

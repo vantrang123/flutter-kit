@@ -63,15 +63,9 @@ class _HomePageState extends State<HomePage> {
               Icon(MdiIcons.viewList),
               true,
               () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MoviesIndexPage(),
-                  ),
-                );
+                Navigator.pushNamed(context, Constants.moviesIndexPage);
               }
             )
-
           ],
         ),
       ),
