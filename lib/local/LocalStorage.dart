@@ -29,7 +29,7 @@ class LocalStorage {
     await prefs.setBool(Constants.appPreviouslyRunKey, isRun);
   }
 
-  String getRunKey() {
-    return prefs.getString(Constants.appPreviouslyRunKey);
+  bool getRunKey() {
+    return prefs.getBool(Constants.appPreviouslyRunKey);
   }
 }

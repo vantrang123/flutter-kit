@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:starterkit/local/LocalStorage.dart';
 import 'package:starterkit/utils/constants.dart';
 import 'package:starterkit/utils/styles.dart';
