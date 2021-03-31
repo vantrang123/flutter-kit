@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'dart:io' show Platform;
 
 import 'package:get_version/get_version.dart';
+import 'package:starterkit/localization/app_localizations.dart';
 import 'package:starterkit/utils/constants.dart';
 import 'package:starterkit/utils/styles.dart';
 import 'package:starterkit/views/partials/common_appbar_actions.dart';
@@ -107,7 +108,7 @@ class _AboutPageState extends State<AboutPage> {
                 padding: EdgeInsets.all(20),
                 child: Column(
                   children: <Widget>[
-                    Text("About Us", style: Styles.title.copyWith(
+                    Text(buildTranslate(context, 'about_page'), style: Styles.title.copyWith(
                       height: 1,
                       fontSize: 22,
                     )),

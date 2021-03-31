@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:starterkit/localization/app_localizations.dart';
+import 'package:starterkit/localization/language_constants.dart';
 import 'package:starterkit/utils/constants.dart';
 import 'package:starterkit/utils/styles.dart';
+import 'package:starterkit/views/app.dart';
 
 class HomeDrawer extends StatelessWidget {
   @override
@@ -12,14 +16,17 @@ class HomeDrawer extends StatelessWidget {
         children: <Widget>[
           DrawerHeaderItem(),
           FlutterTipsItem(),
-
-          Divider(color: Colors.grey[500],),
-
+          Divider(
+            color: Colors.grey[500],
+          ),
           LoginItem(),
           ReferAFriendItem(),
           AboutItem(),
           RateAppItem(),
-          SizedBox(height: 50,),
+          ChangeLanguage(),
+          SizedBox(
+            height: 50,
+          ),
         ],
       ),
     );
@@ -34,19 +41,22 @@ class BackendDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeaderItem(),
-
-          Divider(color: Colors.grey[500],),
+          Divider(
+            color: Colors.grey[500],
+          ),
           LogoutItem(),
           ReferAFriendItem(),
           AboutItem(),
           RateAppItem(),
-          SizedBox(height: 50,),
+          ChangeLanguage(),
+          SizedBox(
+            height: 50,
+          ),
         ],
       ),
     );
   }
 }
-
 
 /// menu header
 class DrawerHeaderItem extends StatelessWidget {
@@ -62,14 +72,11 @@ class DrawerHeaderItem extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
         image: DecorationImage(
-            image: AssetImage(Constants.logoKey),
-            fit: BoxFit.contain
-        ),
+            image: AssetImage(Constants.logoKey), fit: BoxFit.contain),
       ),
     );
   }
 }
-
 
 /// home item
 class HomeItem extends StatelessWidget {
@@ -87,7 +94,6 @@ class HomeItem extends StatelessWidget {
   }
 }
 
-
 /// flutter tips item
 class FlutterTipsItem extends StatelessWidget {
   @override
@@ -98,12 +104,11 @@ class FlutterTipsItem extends StatelessWidget {
       onTap: () {
         Navigator.pop(context);
 
-        Navigator.pushNamed(context, Constants.flutterTipsPage);
+        Navigator.pushNamed(context, Constants.flutterTips);
       },
     );
   }
 }
-
 
 /// refer a friend item
 class ReferAFriendItem extends StatelessWidget {
@@ -115,7 +120,7 @@ class ReferAFriendItem extends StatelessWidget {
       onTap: () {
         Navigator.pop(context);
 
-        Navigator.pushNamed(context, Constants.referAFriendPage);
+        Navigator.pushNamed(context, Constants.referAFriend);
       },
     );
   }
@@ -137,6 +142,40 @@ class LogoutItem extends StatelessWidget {
         Navigator.pushNamed(context, '/');
       },
     );
+  }
+}
+
+/// change language
+class ChangeLanguage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(
+        buildTranslate(context, 'change_language'),
+      ),
+      leading: Icon(Icons.language, color: Styles.appDrawerIconColor),
+      onTap: () async {
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        String _languageCode = (prefs.getString(LAGUAGE_CODE) ?? "en");
+        if (_languageCode == "en") _changeLanguage(VIETNAMESE, context);
+        else _changeLanguage(ENGLISH, context);
+        // Navigator.pop(context);
+      },
+    );
+  }
+
+  void _changeLanguage(String languageCode, BuildContext context) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString(LAGUAGE_CODE, languageCode);
+    Locale locale;
+    switch (languageCode) {
+      case ENGLISH:
+        locale = Locale(languageCode, 'US');
+        break;
+      case VIETNAMESE:
+        locale = Locale(languageCode, 'VN');
+    }
+    App.setLocale(context, locale);
   }
 }
 
@@ -166,24 +205,24 @@ class _LoginItemState extends State<LoginItem> {
   @override
   Widget build(BuildContext context) {
     return loggedIn
-      ? ListTile(
-          title: Text("Dashboard", style: Styles.appDrawerTextStyle),
-          leading: Icon(Icons.home, color: Styles.appDrawerIconColor),
-          onTap: () {
-            Navigator.pop(context);
+        ? ListTile(
+            title: Text("Dashboard", style: Styles.appDrawerTextStyle),
+            leading: Icon(Icons.home, color: Styles.appDrawerIconColor),
+            onTap: () {
+              Navigator.pop(context);
 
-            Navigator.pushNamed(context, Constants.dashboardPage);
-          },
-        )
-      : ListTile(
-          title: Text("Sign In", style: Styles.appDrawerTextStyle),
-          leading: Icon(Icons.exit_to_app, color: Styles.appDrawerIconColor),
-          onTap: () {
-            Navigator.pop(context);
+              Navigator.pushNamed(context, Constants.dashboard);
+            },
+          )
+        : ListTile(
+            title: Text(buildTranslate(context, 'sign_in'), style: Styles.appDrawerTextStyle),
+            leading: Icon(Icons.exit_to_app, color: Styles.appDrawerIconColor),
+            onTap: () {
+              Navigator.pop(context);
 
-            Navigator.pushNamed(context, Constants.loginPage);
-          },
-        );
+              Navigator.pushNamed(context, Constants.login);
+            },
+          );
   }
 }
 
@@ -197,19 +236,18 @@ class AboutItem extends StatelessWidget {
       onTap: () {
         Navigator.pop(context);
 
-        Navigator.pushNamed(context, Constants.aboutPage);
+        Navigator.pushNamed(context, Constants.about);
       },
     );
   }
 }
-
 
 /// rate app item
 class RateAppItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text("Rate Us", style: Styles.appDrawerTextStyle),
+      title: Text(buildTranslate(context, 'rate_us'), style: Styles.appDrawerTextStyle),
       leading: Icon(Icons.star, color: Styles.appDrawerIconColor),
       onTap: () {
         Navigator.pop(context);
@@ -219,4 +257,3 @@ class RateAppItem extends StatelessWidget {
     );
   }
 }
-

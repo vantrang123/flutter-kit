@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:starterkit/localization/app_localizations.dart';
 import 'package:starterkit/utils/constants.dart';
 import 'package:starterkit/utils/styles.dart';
 import 'package:starterkit/views/movies/index.dart';
@@ -35,7 +36,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              buildTranslate(context, 'you_have_pushed'),
               style: Styles.p,
             ),
             Text(
@@ -58,12 +59,11 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 20,),
 
             MySubmitIconedThemedButton(
-              context,
-              "GO TO MOVIES",
+              context, buildTranslate(context, 'go_to_movies'),
               Icon(MdiIcons.viewList),
               true,
               () {
-                Navigator.pushNamed(context, Constants.moviesIndexPage);
+                Navigator.pushNamed(context, Constants.moviesIndex);
               }
             )
           ],

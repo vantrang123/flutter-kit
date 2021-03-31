@@ -1,0 +1,17 @@
+{
+    "app_name": "Flutter Kit",
+    "home_page": "Trang chủ",
+    "about_page": "Về chúng tôi",
+    "about_app": "Đây là một ứng dụng thử nghiệm cho thấy cách Thay đổi ngôn ngữ chập chờn mà không cần khởi động lại ứng dụng",
+    "note": "Đây là một ghi chú thử nghiệm",
+    "go_to_about": "Đi tới Giới thiệu",
+    "english": "English",
+    "vietnamese": "Tiếng Việt",
+    "change_language": "Đổi ngôn ngữ",
+    "go_to_movies": "Đi tới xem phim",
+    "you_have_pushed": "Bạn đã nhấn nút này nhiều lần:",
+    "rate_us": "Đánh giá chúng tôi",
+    "sign_in": "Đăng nhập"
+
+
+}

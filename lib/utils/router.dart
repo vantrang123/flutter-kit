@@ -18,28 +18,26 @@ import '../views/pages/rate_app.dart';
 import 'constants.dart';
 
 class Router {
-  static Route generateRoute(RouteSettings settings) {
+  static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Constants.splash:
-        return MaterialPageRoute(builder: (context) => SplashScreenPage());
+        return MaterialPageRoute(builder: (_) => SplashScreenPage());
       case Constants.home:
-        return MaterialPageRoute(builder: (context) => HomePage());
-      case Constants.referAFriendPage:
-        return MaterialPageRoute(builder: (context) => ReferAFriendPage());
-      case Constants.aboutPage:
-        return MaterialPageRoute(builder: (context) => AboutPage());
+        return MaterialPageRoute(builder: (_) => HomePage());
+      case Constants.referAFriend:
+        return MaterialPageRoute(builder: (_) => ReferAFriendPage());
+      case Constants.about:
+        return MaterialPageRoute(builder: (_) => AboutPage());
       case Constants.rateApp:
-        return MaterialPageRoute(builder: (context) => RateApp());
-      case Constants.flutterTipsPage:
-        return MaterialPageRoute(builder: (context) => FlutterTipsPage());
-      case Constants.loginPage:
-        return MaterialPageRoute(builder: (context) => LoginPage());
-      case Constants.dashboardPage:
-        return MaterialPageRoute(builder: (context) => DashboardPage());
-      case Constants.moviesIndexPage:
-        return MaterialPageRoute(builder: (context) => MoviesIndexPage());
-      default:
-        return MaterialPageRoute(builder: (context) => UnknownPage(),);
+        return MaterialPageRoute(builder: (_) => RateApp());
+      case Constants.flutterTips:
+        return MaterialPageRoute(builder: (_) => FlutterTipsPage());
+      case Constants.login:
+        return MaterialPageRoute(builder: (_) => LoginPage());
+      case Constants.dashboard:
+        return MaterialPageRoute(builder: (_) => DashboardPage());
+      case Constants.moviesIndex:
+        return MaterialPageRoute(builder: (_) => MoviesIndexPage());
     }
   }
 }

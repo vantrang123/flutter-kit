@@ -62,13 +62,13 @@ class Constants {
   static String moviesUrl = apiBaseUrl + "movie/popular?api_key=" + moviesApiKey;
 
   /// route name
-  static const String splash = 'SplashScreenPage';
-  static const String home = "HomePage";
-  static const String referAFriendPage = "ReferAFriendPage";
-  static const String aboutPage = "AboutPage";
-  static const String rateApp = "RateApp";
-  static const String flutterTipsPage = "FlutterTipsPage";
-  static const String loginPage = "FlutterTipsPage";
-  static const String dashboardPage = "DashboardPage";
-  static const String moviesIndexPage = "MoviesIndexPage";
+  static const String splash = '/splash';
+  static const String home = "/home";
+  static const String referAFriend = "/referAFriend";
+  static const String about = "/about";
+  static const String rateApp = "/rateApp";
+  static const String flutterTips = "/flutterTips";
+  static const String login = "/login";
+  static const String dashboard = "/dashboard";
+  static const String moviesIndex = "/moviesIndex";
 }

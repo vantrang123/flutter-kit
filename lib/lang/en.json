@@ -1,0 +1,15 @@
+{
+    "app_name": "Flutter Kit",
+    "home_page": "Home Page",
+    "about_page": "About Us",
+    "about_app": "This is a test app showing how to Change language in flutter without restarting the app",
+    "note": "This is a test note",
+    "go_to_about": "Go to About ",
+    "english": "English",
+    "vietnamese": "فارسی",
+    "change_language": "Change Language",
+    "go_to_movies": "GO TO MOVIES",
+    "you_have_pushed": "You have pushed the button this many times:",
+    "rate_us": "Rate Us",
+    "sign_in": "Sign In"
+}
