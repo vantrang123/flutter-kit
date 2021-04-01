@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:starterkit/local/LocalStorage.dart';
+import 'package:starterkit/local/Prefs.dart';
 import 'package:starterkit/localization/app_localizations.dart';
 import 'package:starterkit/localization/language_constants.dart';
 import 'package:starterkit/utils/constants.dart';
@@ -147,7 +147,7 @@ class LogoutItem extends StatelessWidget {
 
 /// change language
 class ChangeLanguage extends StatelessWidget {
-  LocalStorage localStorageEx = LocalStorage();
+  Prefs localStorageEx = Prefs();
   @override
   Widget build(BuildContext context) {
     return ListTile(

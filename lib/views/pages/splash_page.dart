@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:starterkit/local/LocalStorage.dart';
+import 'package:starterkit/local/Prefs.dart';
 import 'package:starterkit/utils/constants.dart';
 import 'package:starterkit/utils/styles.dart';
 
@@ -14,8 +14,7 @@ class SplashScreenPage extends StatefulWidget {
 }
 
 class _SplashScreenPageState extends State<SplashScreenPage> {
-  LocalStorage localStorageEx = LocalStorage();
-
+  Prefs localStorageEx = Prefs();
   Future checkFirstSeen() async {
     bool _seen = localStorageEx.getRunKey() ?? false;
 

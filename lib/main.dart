@@ -6,7 +6,8 @@ import 'utils/constants.dart';
 import 'utils/flavor.dart';
 import 'views/app.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   final flavor = EnumToString.fromString(
     Flavor.values,
     const String.fromEnvironment('FLAVOR'),

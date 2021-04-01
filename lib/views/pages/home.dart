@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:starterkit/localization/app_localizations.dart';
 import 'package:starterkit/utils/constants.dart';
+import 'package:starterkit/utils/router.dart';
 import 'package:starterkit/utils/styles.dart';
 import 'package:starterkit/views/movies/index.dart';
 import 'package:starterkit/views/partials/common_appbar_actions.dart';
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
               Icon(MdiIcons.viewList),
               true,
               () {
-                Navigator.pushNamed(context, Constants.moviesIndex);
+                Navigator.push(context, EnterExitRoute(exitPage: HomePage(), enterPage: MoviesIndexPage()));
               }
             )
           ],
