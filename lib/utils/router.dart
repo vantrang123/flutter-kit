@@ -38,8 +38,6 @@ class Router {
         return MaterialPageRoute(builder: (_) => DashboardPage());
       case Constants.moviesIndex:
         return MaterialPageRoute(builder: (_) => MoviesIndexPage());
-      default:
-        return null;
     }
   }
 }

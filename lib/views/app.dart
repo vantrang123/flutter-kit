@@ -42,14 +42,15 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    if (this._locale == null) {
+    /*if (this._locale == null) {
+      print(('XXXXXXXXXXXXXXXX'));
       return Container(
         child: Center(
           child: CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.blue[800])),
         ),
       );
-    } else
+    } else*/
       return MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,

@@ -12,7 +12,7 @@ void main() async {
     Flavor.values,
     const String.fromEnvironment('FLAVOR'),
   );
-  if (flavor.index == 0)
+  if (flavor.index == 0 || flavor == null)
     Constants.apiBaseUrl = Constants.apiBaseUrlDev;
   else if (flavor.index == 1)
     Constants.apiBaseUrl = Constants.apiBaseUrlStaging;
