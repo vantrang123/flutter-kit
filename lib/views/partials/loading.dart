@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:starterkit/utils/styles.dart';
+import 'package:starterkit/utils/colors.dart';
 
 class Loading extends StatelessWidget {
   final String loadingMessage;
@@ -16,13 +16,13 @@ class Loading extends StatelessWidget {
             loadingMessage,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Styles.appPrimaryColor,
+              color: AppColors.appPrimaryColor,
               fontSize: 24,
             ),
           ),
           SizedBox(height: 24),
           CircularProgressIndicator(
-            valueColor: AlwaysStoppedAnimation<Color>(Styles.appPrimaryColor),
+            valueColor: AlwaysStoppedAnimation<Color>(AppColors.appPrimaryColor),
           ),
         ],
       ),

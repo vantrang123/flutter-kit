@@ -49,5 +49,5 @@ class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   bool shouldReload(LocalizationsDelegate<AppLocalizations> old) => false;
 }
 
-String buildTranslate(BuildContext context, String key) =>
+String buildText(BuildContext context, String key) =>
     AppLocalizations.of(context).translate(key);

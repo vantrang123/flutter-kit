@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:starterkit/views/auth/login.dart';
+import 'package:starterkit/views/home/home_screen.dart';
 import 'package:starterkit/views/movies/index.dart';
 import 'package:starterkit/views/pages/about.dart';
 import 'package:starterkit/views/pages/dashboard.dart';
@@ -22,7 +23,7 @@ class Router {
       case Constants.splash:
         return MaterialPageRoute(builder: (_) => SplashScreenPage());
       case Constants.home:
-        return MaterialPageRoute(builder: (_) => HomePage());
+        return MaterialPageRoute(builder: (_) => HomeScreen());
       case Constants.referAFriend:
         return MaterialPageRoute(builder: (_) => ReferAFriendPage());
       case Constants.about:

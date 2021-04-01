@@ -12,5 +12,9 @@
     "you_have_pushed": "You have pushed the button this many times:",
     "rate_us": "Rate Us",
     "sign_in": "Sign In",
-    "movies": "Movies"
+    "movies": "Movies",
+    "home": "Home",
+    "wish_list": "Wishlist",
+    "cart": "Cart",
+    "account": "Account"
 }

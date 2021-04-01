@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:launch_review/launch_review.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:starterkit/utils/colors.dart';
 import 'package:starterkit/utils/constants.dart';
 import 'package:starterkit/utils/styles.dart';
 import 'package:starterkit/views/partials/custom_form_fields.dart';
@@ -25,7 +26,7 @@ class _RateAppState extends State<RateApp> {
           children: <Widget>[
             Container(
               child: Card(
-                color: Styles.commonDarkCardBackground,
+                color: AppColors.commonDarkCardBackground,
                 elevation: 5,
                 child: Padding(
                   padding: EdgeInsets.all(20),

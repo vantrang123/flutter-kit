@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              buildTranslate(context, 'you_have_pushed'),
+              buildText(context, 'you_have_pushed'),
               style: Styles.p,
             ),
             Text(
@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 20,),
 
             MySubmitIconedThemedButton(
-              context, buildTranslate(context, 'go_to_movies'),
+              context, buildText(context, 'go_to_movies'),
               Icon(MdiIcons.viewList),
               true,
               () {

@@ -152,7 +152,7 @@ class ChangeLanguage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(
-        buildTranslate(context, 'change_language'),
+        buildText(context, 'change_language'),
       ),
       leading: Icon(Icons.language, color: Styles.appDrawerIconColor),
       onTap: () async {
@@ -214,7 +214,7 @@ class _LoginItemState extends State<LoginItem> {
             },
           )
         : ListTile(
-            title: Text(buildTranslate(context, 'sign_in'), style: Styles.appDrawerTextStyle),
+            title: Text(buildText(context, 'sign_in'), style: Styles.appDrawerTextStyle),
             leading: Icon(Icons.exit_to_app, color: Styles.appDrawerIconColor),
             onTap: () {
               Navigator.pop(context);
@@ -246,7 +246,7 @@ class RateAppItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(buildTranslate(context, 'rate_us'), style: Styles.appDrawerTextStyle),
+      title: Text(buildText(context, 'rate_us'), style: Styles.appDrawerTextStyle),
       leading: Icon(Icons.star, color: Styles.appDrawerIconColor),
       onTap: () {
         Navigator.pop(context);

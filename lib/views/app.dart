@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:starterkit/local/Prefs.dart';
 import 'package:starterkit/localization/app_localizations.dart';
 import 'package:starterkit/localization/language_constants.dart';
+import 'package:starterkit/utils/colors.dart';
 import 'package:starterkit/utils/constants.dart';
 import 'package:starterkit/utils/styles.dart';
 import 'package:starterkit/utils/router.dart' as router;
@@ -53,12 +54,12 @@ class _AppState extends State<App> {
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primaryColor: Styles.appPrimaryColor,
-          accentColor: Styles.appAccentColor,
+          primaryColor: AppColors.appPrimaryColor,
+          accentColor: AppColors.appAccentColor,
           brightness: Brightness.light,
 
           // for drawer color
-          canvasColor: Styles.appCanvasColor,
+          canvasColor: AppColors.appCanvasColor,
           fontFamily: 'Montserrat',
           textTheme: Styles.appTextTheme,
         ),
