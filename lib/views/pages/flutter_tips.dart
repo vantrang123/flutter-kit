@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:starterkit/utils/colors.dart';
+import 'package:starterkit/theme/colors.dart';
 import 'package:starterkit/utils/constants.dart';
 import 'package:starterkit/utils/styles.dart';
 
@@ -38,7 +38,7 @@ class FlutterTipsPage extends StatelessWidget {
 
             Card(
               elevation: 3,
-              color: AppColors.commonDarkCardBackground,
+              color: commonDarkCardBackground,
               child: Container(
                 padding: EdgeInsets.all(8),
                 child: Text('''

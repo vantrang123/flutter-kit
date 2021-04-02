@@ -2,12 +2,11 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:starterkit/local/Prefs.dart';
-import 'package:starterkit/utils/colors.dart';
+import 'package:starterkit/theme/colors.dart';
 import 'package:starterkit/utils/constants.dart';
 import 'package:starterkit/utils/styles.dart';
-import 'package:starterkit/views/home/home_screen.dart';
+import 'package:starterkit/views/main/main_screen.dart';
 
-import 'home.dart';
 import 'intro_screen.dart';
 
 class SplashScreenPage extends StatefulWidget {
@@ -23,7 +22,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     if (_seen) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => HomeScreen()
+          builder: (context) => MainScreen()
         )
       );
     } else {
@@ -56,7 +55,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
 //          fit: BoxFit.cover,
 //        ),
 //      ),
-      color: AppColors.appPrimaryColor,
+      color: appPrimaryColor,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Container(

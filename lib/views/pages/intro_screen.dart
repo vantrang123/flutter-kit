@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intro_views_flutter/Models/page_view_model.dart';
 import 'package:intro_views_flutter/intro_views_flutter.dart';
-import 'package:starterkit/utils/colors.dart';
+import 'package:starterkit/theme/colors.dart';
 import 'package:starterkit/utils/constants.dart';
 import 'package:starterkit/utils/styles.dart';
-import 'package:starterkit/views/partials/fake_bottom_buttons.dart';
 
 import 'home.dart';
 
@@ -34,7 +33,7 @@ class _IntroScreenPageState extends State<IntroScreenPage> {
 
   final pages = [
     PageViewModel(
-      pageColor: AppColors.appPrimaryColor,
+      pageColor: appPrimaryColor,
       // iconImageAssetPath: 'assets/air-hostess.png',
       bubble: Image.asset(images[1]),
       title: Text(titles[0]),
@@ -102,7 +101,7 @@ class _IntroScreenPageState extends State<IntroScreenPage> {
             showNextButton: true,
             showBackButton: true,
             onTapDoneButton: () {
-              Navigator.pushNamed(context, Constants.home);
+              Navigator.pushReplacementNamed(context, Constants.main);
             },
             pageButtonTextStyles: TextStyle(
               color: Colors.white,
@@ -113,5 +112,4 @@ class _IntroScreenPageState extends State<IntroScreenPage> {
       ),
     );
   }
-
 }

@@ -157,7 +157,7 @@ class ChangeLanguage extends StatelessWidget {
       leading: Icon(Icons.language, color: Styles.appDrawerIconColor),
       onTap: () async {
         String _languageCode = localStorageEx.getLanguage();
-        if (_languageCode == "en") _changeLanguage(VIETNAMESE, context);
+        if (_languageCode == ENGLISH) _changeLanguage(VIETNAMESE, context);
         else _changeLanguage(ENGLISH, context);
         // Navigator.pop(context);
       },
@@ -173,6 +173,9 @@ class ChangeLanguage extends StatelessWidget {
         break;
       case VIETNAMESE:
         locale = Locale(languageCode, 'VN');
+        break;
+      default:
+        locale = Locale(languageCode, 'US');
     }
     App.setLocale(context, locale);
   }

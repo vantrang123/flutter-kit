@@ -24,8 +24,11 @@ class ApiError extends StatelessWidget {
             ),
           ),
           SizedBox(height: 8),
-          RaisedButton(
-            color: Theme.of(context).primaryColor,
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              primary: Theme.of(context).primaryColor, // background
+              onPrimary: Colors.white, // foreground
+            ),
             child: Text('Retry', style: TextStyle(color: Colors.white)),
             onPressed: onRetryPressed,
           )

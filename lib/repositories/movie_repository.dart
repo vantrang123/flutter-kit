@@ -11,4 +11,9 @@ class MovieRepository {
     final response = await _helper.get(Constants.moviesUrl);
     return MovieResponse.fromJson(response).results;
   }
+
+  Future<List<Movie>> fetchBannerList() async {
+    final response = await _helper.get(Constants.bannersUrl);
+    return MovieResponse.fromJson(response).results;
+  }
 }

@@ -4,7 +4,7 @@ import 'dart:io' show Platform;
 
 import 'package:get_version/get_version.dart';
 import 'package:starterkit/localization/app_localizations.dart';
-import 'package:starterkit/utils/colors.dart';
+import 'package:starterkit/theme/colors.dart';
 import 'package:starterkit/utils/constants.dart';
 import 'package:starterkit/utils/styles.dart';
 import 'package:starterkit/views/partials/common_appbar_actions.dart';
@@ -103,7 +103,7 @@ class _AboutPageState extends State<AboutPage> {
             SizedBox(height: 10.0,),
 
             Card(
-              color: AppColors.commonDarkCardBackground,
+              color: commonDarkCardBackground,
               margin: EdgeInsets.fromLTRB(20, 0, 20, 10),
               child: Padding(
                 padding: EdgeInsets.all(20),

@@ -60,10 +60,13 @@ class Constants {
   static const String apiBaseUrlPro = "http://api.themoviedb.org/3/";
   static String apiBaseUrl = "";
   static String moviesUrl = apiBaseUrl + "movie/popular?api_key=" + moviesApiKey;
+  static String bannersUrl = apiBaseUrl + "movie/now_playing?api_key=" + moviesApiKey;
+
 
   /// route name
   static const String splash = '/splash';
   static const String home = "/home";
+  static const String main = "/main";
   static const String referAFriend = "/referAFriend";
   static const String about = "/about";
   static const String rateApp = "/rateApp";
@@ -71,4 +74,6 @@ class Constants {
   static const String login = "/login";
   static const String dashboard = "/dashboard";
   static const String moviesIndex = "/moviesIndex";
+
+  static const fontName = "Muli";
 }

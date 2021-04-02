@@ -1,7 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-
-import 'colors.dart';
+import 'package:starterkit/theme/colors.dart';
 
 // primaryColor = #9b51e0 rgb(155,81,224)
 
@@ -63,7 +62,7 @@ class Styles {
   );
 
   static TextStyle p_theme = p.copyWith(
-    color: AppColors.appPrimaryColor,
+    color: appPrimaryColor,
   );
 
   static TextStyle p_white = p.copyWith(

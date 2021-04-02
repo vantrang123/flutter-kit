@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:starterkit/local/Prefs.dart';
 import 'package:starterkit/localization/app_localizations.dart';
 import 'package:starterkit/localization/language_constants.dart';
-import 'package:starterkit/utils/colors.dart';
+import 'package:starterkit/theme/theme.dart';
 import 'package:starterkit/utils/constants.dart';
-import 'package:starterkit/utils/styles.dart';
 import 'package:starterkit/utils/router.dart' as router;
 
 import 'pages/unknown_page.dart';
@@ -54,16 +52,7 @@ class _AppState extends State<App> {
       return MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primaryColor: AppColors.appPrimaryColor,
-          accentColor: AppColors.appAccentColor,
-          brightness: Brightness.light,
-
-          // for drawer color
-          canvasColor: AppColors.appCanvasColor,
-          fontFamily: 'Montserrat',
-          textTheme: Styles.appTextTheme,
-        ),
+        theme: defaultTheme,
         supportedLocales: [
           Locale('en', 'US'),
           Locale('vi', 'VN'),
