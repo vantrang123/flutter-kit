@@ -32,3 +32,5 @@ final Color white30 = Color(0x4DFFFFFF);
 final Color white20 = Color(0x33FFFFFF);
 final Color white10 = Color(0x1AFFFFFF);
 final Color white05 = Color(0x0DFFFFFF);
+
+final Color titleColor = const Color(0xFF5a606b);
